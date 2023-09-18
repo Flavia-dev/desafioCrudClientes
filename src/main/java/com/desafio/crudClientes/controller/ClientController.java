@@ -1,9 +1,7 @@
 package com.desafio.crudClientes.controller;
 
 import com.desafio.crudClientes.dto.ClientDto;
-import com.desafio.crudClientes.dto.CustomError;
 import com.desafio.crudClientes.service.ClientService;
-import com.desafio.crudClientes.service.exceptions.ResourceNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.time.Instant;
 
 @RestController
 @RequestMapping(value = "/clients")
@@ -45,7 +42,6 @@ public class ClientController {
         dto = clientService.update(id,dto);
         return ResponseEntity.ok(dto);
     }
-
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteClient (@PathVariable Long id){

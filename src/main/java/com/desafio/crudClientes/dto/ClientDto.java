@@ -22,7 +22,6 @@ public class ClientDto {
     private LocalDate birthDate;
     private Integer children;
 
-
     public ClientDto() {
 
     }

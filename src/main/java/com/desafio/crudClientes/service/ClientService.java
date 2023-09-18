@@ -48,7 +48,7 @@ public class ClientService {
     public ClientDto update(Long id, ClientDto dto){
         Optional<Client> result = repository.findById(id);
         Client entity = result.orElseThrow(
-                () -> new ResourceNotFoundException("Recurso não Encontrado!"));
+                () -> new ResourceNotFoundException("Cliente Inexistente!"));
         copyDtoToEntity(dto,entity);
         return new ClientDto(entity);
     }
